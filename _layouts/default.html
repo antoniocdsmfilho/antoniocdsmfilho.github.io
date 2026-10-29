@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+</head>
+<body>
+  <header>
+    <a href="{{ '/' | relative_url }}" class="logo">&gt; seu_handle<span>_</span></a>
+    <nav>
+      <a href="{{ '/' | relative_url }}">Sobre</a>
+      <a href="{{ '/formacao.html' | relative_url }}">Formação</a>
+      <a href="{{ '/conquistas.html' | relative_url }}">Conquistas</a>
+      <a href="{{ '/ctfs.html' | relative_url }}">CTFs</a>
+      <a href="{{ '/posts.html' | relative_url }}">Posts</a>
+    </nav>
+  </header>
+
+  <main>
+    {{ content }}
+  </main>
+</body>
+</html>
