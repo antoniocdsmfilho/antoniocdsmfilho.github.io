@@ -5,23 +5,29 @@ title: "Posts"
 
 <h1>Posts & Write-ups</h1>
 
-{% for post in site.posts %}
-  <article class="post-card">
-    <h2 class="post-title">
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-    </h2>
-    <p class="post-excerpt">
-      {{ post.excerpt | strip_html | truncatewords: 25 }}
-    </p>
-    <div class="post-meta">
-      <span>📅 {{ post.date | date: "%d/%m/%Y" }}</span>
-      <span>•</span>
-      <span>⏱️ {{ post.content | strip_html | number_of_words | divided_by: 180 | plus: 1 }} min leitura</span>
-      <div style="display: inline-flex; gap: 6px; margin-left: auto;">
-        {% for tag in post.tags %}
-          <span class="tag">#{{ tag }}</span>
-        {% endfor %}
+{% if site.posts.size > 0 %}
+  {% for post in site.posts %}
+    <article class="post-card">
+      <h2 class="post-title">
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </h2>
+      <p class="post-excerpt">
+        {{ post.excerpt | strip_html | truncatewords: 25 }}
+      </p>
+      <div class="post-meta">
+        <span>📅 {{ post.date | date: "%d/%m/%Y" }}</span>
+        <span>•</span>
+        <span>⏱️ {{ post.content | strip_html | number_of_words | divided_by: 180 | plus: 1 }} min leitura</span>
+        <div style="display: inline-flex; gap: 6px; margin-left: auto;">
+          {% for tag in post.tags %}
+            <span class="tag">#{{ tag }}</span>
+          {% endfor %}
+        </div>
       </div>
-    </div>
-  </article>
-{% endfor %}
+    </article>
+  {% endfor %}
+{% else %}
+  <p style="color: var(--text-muted); margin-top: 20px;">
+    Nenhum post encontrado. Verifique se o arquivo dentro da pasta <code>_posts/</code> segue o padrão <code>AAAA-MM-DD-titulo.md</code> e possui o cabeçalho <code>---</code> no topo.
+  </p>
+{% endif %}
