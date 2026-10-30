@@ -21,7 +21,6 @@ body {
   line-height: 1.6;
 }
 
-/* --- 1. BANNER DE TOPO (100% DA TELA) --- */
 .hero-banner {
   width: 100vw;
   height: 320px;
@@ -53,7 +52,6 @@ body {
   font-size: 1.05rem;
 }
 
-/* --- 2. MENU DE NAVEGAÇÃO 100% LOGO ABAIXO DA IMAGEM --- */
 .nav-bar {
   width: 100vw;
   position: relative;
@@ -100,19 +98,16 @@ nav a {
   transition: color 0.2s ease;
 }
 
-/* Efeito Hover: muda de cor ao passar o mouse */
 nav a:hover, nav a.active {
   color: var(--accent-hover);
 }
 
-/* --- 3. CONTAINER DE CONTEÚDO CENTRALIZADO --- */
 .container {
   max-width: 850px;
   margin: 0 auto;
   padding: 0 24px 80px 24px;
 }
 
-/* Tipografia Geral */
 h1 {
   font-size: 2rem;
   color: var(--text-main);
@@ -168,7 +163,6 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Feed de Posts */
 .post-card {
   background: var(--card-bg);
   border: 1px solid var(--border);
@@ -219,4 +213,22 @@ a:hover {
   border-radius: 4px;
   font-size: 0.75rem;
   font-family: monospace;
+}
+
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 10px 0 30px 0;
+}
+
+.profile-pic {
+  width: 160px;
+  height: 160px;
+  border-radius: 50% !important; /* Força a ser um círculo perfeito */
+  object-fit: cover; /* Evita que a foto fique esticada */
+  border: 3px solid var(--accent); /* Borda com a cor de destaque */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  display: block;
 }
