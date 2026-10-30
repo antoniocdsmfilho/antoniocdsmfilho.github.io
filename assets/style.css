@@ -24,23 +24,22 @@ body {
 /* --- BANNER DE TOPO (100% DA TELA) --- */
 .hero-banner {
   width: 100vw;
-  height: 380px; /* Altura do banner */
+  height: 380px;
   position: relative;
   left: 50%;
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  background-image: url('/assets/banner.jpg'); /* Coloque sua imagem na pasta assets */
+  background-image: url('/assets/banner.jpg');
   background-size: cover;
   background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
   border-bottom: 2px solid var(--accent);
-  margin-bottom: 40px;
+  margin-bottom: 0; /* Grudado na barra de navegação logo abaixo */
 }
 
-/* Camada escura por cima da imagem para o texto destacar */
 .hero-banner::after {
   content: '';
   position: absolute;
@@ -68,24 +67,30 @@ body {
   font-size: 1.1rem;
 }
 
-/* --- CONTAINER PRINCIPAL (CONTEÚDO CENTRALIZADO) --- */
-.container {
-  max-width: 850px;
-  margin: 0 auto;
-  padding: 0 20px 60px 20px;
-}
-
-/* Header & Navegação */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* --- MENU DE NAVEGAÇÃO 100% DE LARGURA --- */
+.nav-bar {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background-color: #161b22; /* Fundo levemente destacado do corpo */
   border-bottom: 1px solid var(--border);
-  padding-bottom: 20px;
   margin-bottom: 40px;
 }
 
-header .logo {
+/* Conteúdo interno alinhado e centralizado no meio */
+.nav-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-bar .logo {
   font-weight: 700;
   font-size: 1.1rem;
   color: var(--text-main);
@@ -93,24 +98,33 @@ header .logo {
   font-family: monospace;
 }
 
-header .logo span {
+.nav-bar .logo span {
   color: var(--accent);
 }
 
 nav {
   display: flex;
-  gap: 20px;
+  gap: 24px;
 }
 
 nav a {
   color: var(--text-muted);
   text-decoration: none;
-  font-size: 0.9rem;
-  transition: color 0.2s;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.2s ease, transform 0.1s ease;
 }
 
+/* Efeito Hover: muda de cor para o destaque */
 nav a:hover, nav a.active {
   color: var(--accent);
+}
+
+/* --- CONTAINER PRINCIPAL DO CONTEÚDO --- */
+.container {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 0 20px 60px 20px;
 }
 
 /* Tipografia Geral */
@@ -164,7 +178,7 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Feed de Posts (Estilo Medium Dark Moderno) */
+/* Feed de Posts */
 .post-card {
   background: var(--card-bg);
   border: 1px solid var(--border);
