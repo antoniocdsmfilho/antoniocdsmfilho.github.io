@@ -7,7 +7,15 @@
 </head>
 <body>
 
-  <!-- MENU DE NAVEGAÇÃO FIXO NO TOPO -->
+  <!-- 1. BANNER DE TOPO 100% -->
+  <div class="hero-banner">
+    <div class="hero-content">
+      <h1>{{ page.title }}</h1>
+      <p>Segurança da Informação, Write-ups & Conquistas</p>
+    </div>
+  </div>
+
+  <!-- 2. MENU 100% LOGO ABAIXO DA IMAGEM -->
   <div class="nav-bar">
     <div class="nav-container">
       <a href="{{ '/' | relative_url }}" class="logo">&gt; seu_handle<span>_</span></a>
@@ -21,15 +29,7 @@
     </div>
   </div>
 
-  <!-- BANNER DE TOPO -->
-  <div class="hero-banner">
-    <div class="hero-content">
-      <h1>{{ page.title }}</h1>
-      <p>Segurança da Informação, Write-ups & Conquistas</p>
-    </div>
-  </div>
-
-  <!-- CONTEÚDO CENTRALIZADO -->
+  <!-- 3. CONTEÚDO CENTRALIZADO -->
   <div class="container">
     <main>
       {{ content }}
